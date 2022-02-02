@@ -1,6 +1,7 @@
 import React from 'react';
 import Lists from "./Components/Lists/Sidebar";
 import {useState} from "react";
+import AddModalList from "./Components/AddListModal/AddModalList";
 
 
 const items = [
@@ -15,26 +16,19 @@ const items = [
 function App() {
     const [isOpenModal, setOpenModal] = useState(false);
 
-    const showModal = () => {
-        setOpenModal(!isOpenModal);
-    }
-
     return (
         <div className="todo">
             <div className="todo__sidebar">
                 <Lists isRemovable items={items}/>
-                <button onClick={showModal} className="sidebar__add-button">
+                <button onClick={() => setOpenModal(!isOpenModal)} className="sidebar__add-button">
                     <Lists items={[{
                         icon: <img src="https://img.icons8.com/material-sharp/24/000000/add-column.png" alt="icon"/>,
                         color: null,
-                        name: 'Add something'
+                        name: isOpenModal ? 'Close' : 'Add something',
                     }]}/>
                 </button>
             </div>
-            {isOpenModal ?
-                <div className="todo__add-modal">
-
-                </div> : null}
+            {isOpenModal ? <AddModalList setOpenmodal={() => setOpenModal(isOpenModal)}/> : null}
             <div className="todo_tasks">
 
             </div>

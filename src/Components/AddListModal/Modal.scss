@@ -1,0 +1,105 @@
+.modal {
+  padding: 1%;
+  left: 20px;
+  border: 1px solid #808080;
+  border-radius: 12px;
+  position: fixed;
+  bottom: 90px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  flex-direction: column;
+
+  &--close {
+    cursor: pointer;
+    width: 30px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+  }
+
+  &-colors {
+    display: flex;
+    justify-content: center;
+
+    .badge {
+      margin: 2px;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 50%;
+
+      &--active {
+        border: 2px solid #808080;
+      }
+
+      &--grey {
+        background-color: #C9D1D3;
+      }
+
+      &--lime {
+        background-color: #B6E6BD;
+      }
+
+      &--green {
+        background-color: green;
+      }
+
+      &--black {
+        background-color: #110133;
+      }
+
+      &--red {
+        background-color: red;
+      }
+
+      &--pink {
+        background-color: #FFBBCC;
+      }
+
+      &--blue {
+        background-color: blue;
+      }
+
+      &--purple {
+        background-color: #C355F5;
+      }
+
+      &--black {
+        background-color: #110133;
+      }
+    }
+  }
+}
+
+input {
+  position: absolute;
+  top: 10px;
+  width: 90%;
+  max-height: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  padding: 3px;
+
+  &:focus {
+    border-color: #ffffff;
+  }
+}
+
+button {
+  position: absolute;
+  width: 90%;
+  bottom: 5px;
+  left: 11px;
+  border: 1px solid green;
+  padding: 5px;
+  border-radius: 4px;
+  background: #008000;
+
+  &:hover {
+    background: lightgreen;
+  }
+}
+
